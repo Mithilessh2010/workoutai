@@ -1,96 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* MacroMate Design System - Fresh, Energetic, Health-Focused */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core brand: Fresh green for health & vitality */
+    --background: 0 0% 99%;
+    --foreground: 160 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 160 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 160 20% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Vibrant emerald green */
+    --primary: 158 64% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Soft sage */
+    --secondary: 158 30% 94%;
+    --secondary-foreground: 158 64% 32%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Subtle gray-green */
+    --muted: 150 10% 95%;
+    --muted-foreground: 150 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Warm coral for highlights */
+    --accent: 16 85% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 150 15% 90%;
+    --input: 150 15% 90%;
+    --ring: 158 64% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Semantic colors for macros */
+    --calories: 40 95% 55%;
+    --protein: 210 85% 55%;
+    --carbs: 158 64% 45%;
+    --fat: 340 75% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(158 64% 45%) 0%, hsl(170 65% 40%) 50%, hsl(185 70% 38%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(158 30% 98%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(158 64% 45%) 0%, hsl(158 70% 55%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(160 20% 10% / 0.03);
+    --shadow-md: 0 4px 12px -2px hsl(160 20% 10% / 0.08);
+    --shadow-lg: 0 12px 32px -4px hsl(160 20% 10% / 0.12);
+    --shadow-glow: 0 0 40px -8px hsl(158 64% 45% / 0.35);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 158 25% 97%;
+    --sidebar-foreground: 160 20% 20%;
+    --sidebar-primary: 158 64% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 158 30% 92%;
+    --sidebar-accent-foreground: 158 64% 32%;
+    --sidebar-border: 150 15% 90%;
+    --sidebar-ring: 158 64% 45%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 160 20% 6%;
+    --foreground: 150 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 160 18% 9%;
+    --card-foreground: 150 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 160 18% 9%;
+    --popover-foreground: 150 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 158 64% 50%;
+    --primary-foreground: 160 20% 6%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 160 15% 15%;
+    --secondary-foreground: 158 50% 70%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 160 15% 15%;
+    --muted-foreground: 150 10% 55%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 16 85% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 160 15% 15%;
+    --input: 160 15% 18%;
+    --ring: 158 64% 50%;
+
+    --calories: 40 90% 50%;
+    --protein: 210 80% 60%;
+    --carbs: 158 60% 50%;
+    --fat: 340 70% 55%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(158 64% 35%) 0%, hsl(170 60% 30%) 50%, hsl(185 65% 28%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(160 18% 10%) 0%, hsl(160 20% 8%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(158 60% 40%) 0%, hsl(158 65% 50%) 100%);
+
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 12px -2px hsl(0 0% 0% / 0.35);
+    --shadow-lg: 0 12px 32px -4px hsl(0 0% 0% / 0.45);
+    --shadow-glow: 0 0 40px -8px hsl(158 64% 50% / 0.25);
+
+    --sidebar-background: 160 18% 8%;
+    --sidebar-foreground: 150 15% 90%;
+    --sidebar-primary: 158 64% 50%;
+    --sidebar-primary-foreground: 160 20% 6%;
+    --sidebar-accent: 160 15% 14%;
+    --sidebar-accent-foreground: 158 50% 70%;
+    --sidebar-border: 160 15% 14%;
+    --sidebar-ring: 158 64% 50%;
   }
 }
 
@@ -100,6 +131,85 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl bg-card/80 border border-border/50;
+    box-shadow: var(--shadow-md);
+  }
+
+  .progress-ring {
+    @apply transition-all duration-700 ease-out;
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .macro-calories {
+    --macro-color: hsl(var(--calories));
+  }
+
+  .macro-protein {
+    --macro-color: hsl(var(--protein));
+  }
+
+  .macro-carbs {
+    --macro-color: hsl(var(--carbs));
+  }
+
+  .macro-fat {
+    --macro-color: hsl(var(--fat));
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-confetti {
+    animation: confetti 0.8s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes confetti {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
