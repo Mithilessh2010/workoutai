@@ -1,4 +1,4 @@
-# MacroMate – AI Calorie & Workout Tracker
+# Workout – AI Calorie & Workout Tracker
 
 MacroMate is a simple web app that helps you track what you eat and stay active using AI.  
 Instead of searching the calories for every food you eat, you can just type your meal in normal English and the app figures it out for you. It can also suggest workouts based on your fitness goals.
